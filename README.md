@@ -41,7 +41,7 @@ git config --global core.hooksPath $(pwd)/hooks
 
 ### Ignore `pre-commit` hook when commit example
 
-Use [`--no-verify`](https://git-scm.com/docs/git-commit) options.
+Use [`--no-verify`](https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---no-verify) options.
 
 ```
 git commit --no-verify
