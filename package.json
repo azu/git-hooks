@@ -2,7 +2,7 @@
   "private": true,
   "name": "@azu/git-hooks",
   "version": "1.0.0",
-  "description": "@azu's git hooks",
+  "description": "@azu's git global hooks",
   "keywords": [
     "git",
     "hooks"
