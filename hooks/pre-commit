@@ -3,9 +3,9 @@
 source `dirname ${0}`/_local-hook-exec
 declare scriptDir=$(cd $(dirname $0);pwd)
 declare parentDir="$(dirname "${scriptDir}")"
-echo -n "  ▶ Check credentials by secretlint"
 declare FILES=$(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g')
 [ -z "$FILES" ] && exit 0
+echo -n "  ▶ Check credentials by secretlint"
 echo "$FILES" | xargs ${parentDir}/node_modules/.bin/secretlint --secretlintrc ${parentDir}/.secretlintrc.json
 RET=$?
 if [ $RET -eq 0 ] ;then
