@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "name": "@azu/git-hooks",
+  "version": "1.0.0",
+  "description": "@azu's git hooks",
+  "keywords": [
+    "git",
+    "hooks"
+  ],
+  "homepage": "https://github.com/azu/git-hooks",
+  "bugs": {
+    "url": "https://github.com/azu/git-hooks/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azu/git-hooks.git"
+  },
+  "license": "MIT",
+  "author": "azu",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@secretlint/secretlint-rule-preset-recommend": "^0.7.2",
+    "secretlint": "^0.7.3"
+  }
+}
