@@ -12,7 +12,7 @@
 ## Hooks
 
 - `pre-commit`
-    - [secretlint](https://github.com/secretlint/secretlint) prevent to commit credential
+    - [secretlint](https://github.com/secretlint/secretlint) prevent to commit credentials
 
 ## Installation
 
