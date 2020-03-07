@@ -1,6 +1,6 @@
 # @azu/git-hooks
 
-@azu's global git hooks.
+[@azu](https://github.com/azu)'s global git hooks.
 
 ## Features
 
