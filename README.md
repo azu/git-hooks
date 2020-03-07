@@ -1,4 +1,4 @@
-# @azu/git-hooks
+# @azu/git-hooks [![Actions Status](https://github.com/azu/git-hooks/workflows/test/badge.svg)](https://github.com/azu/git-hooks/actions?query=workflow%3A"test")
 
 [@azu](https://github.com/azu)'s global git hooks.
 
