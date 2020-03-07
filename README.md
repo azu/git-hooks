@@ -37,6 +37,16 @@ yarn install
 git config --global core.hooksPath $(pwd)/hooks
 ```
 
+## FAQ
+
+### Ignore `pre-commit` hook when commit example
+
+Use [`--no-verify`](https://git-scm.com/docs/git-commit) options.
+
+```
+git commit --no-verify
+```
+
 ## Changelog
 
 See [Releases page](https://github.com/azu/git-hooks/releases).
