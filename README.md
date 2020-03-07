@@ -8,6 +8,7 @@
     - Using [`core.hooksPath`](https://git-scm.com/docs/githooks) on Git 2.9+
 - If project has setup local git hook, call local hooks too
     - Order: local hooks -> global hooks 
+- Define ignoring project by `IGNORE_GLOBAL_HOOKS` file
 
 ## Hooks
 
@@ -36,6 +37,19 @@ yarn install
 # setup git config
 git config --global core.hooksPath $(pwd)/hooks
 ```
+
+## Options
+
+You have setup, then bootstrap script create `IGNORE_GLOBAL_HOOKS` file.
+It is collection of absolute path to ignore global hooks.
+
+`IGNORE_GLOBAL_HOOKS`:
+```
+/path/to/my-project-a
+/path/to/my-project-b
+```
+
+If the project path is included in `IGNORE_GLOBAL_HOOKS`, global git hook does not run. 
 
 ## FAQ
 

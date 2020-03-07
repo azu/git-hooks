@@ -20,6 +20,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "prepare": "node scripts/bootstrap.js"
+  },
   "dependencies": {
     "@secretlint/secretlint-rule-preset-recommend": "^0.7.2",
     "secretlint": "^0.7.3"
