@@ -24,7 +24,7 @@
     "prepare": "node scripts/bootstrap.js"
   },
   "dependencies": {
-    "@secretlint/secretlint-rule-no-dotenv": "^1.1.0",
+    "@secretlint/secretlint-rule-no-dotenv": "^2.0.0",
     "@secretlint/secretlint-rule-preset-recommend": "^1.1.0",
     "secretlint": "^1.1.0"
   }
