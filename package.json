@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@secretlint/secretlint-rule-no-dotenv": "^2.0.0",
-    "@secretlint/secretlint-rule-preset-recommend": "^1.1.0",
+    "@secretlint/secretlint-rule-preset-recommend": "^2.0.0",
     "secretlint": "^2.0.0"
   }
 }
