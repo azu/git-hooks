@@ -152,12 +152,12 @@
     "@textlint/regexp-string-matcher" "^1.1.0"
     node-forge "^0.9.1"
 
-"@secretlint/secretlint-rule-no-dotenv@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@secretlint/secretlint-rule-no-dotenv/-/secretlint-rule-no-dotenv-1.1.0.tgz#73507ddc4ff8a6fa7c38d26d4b55cc6f84b3761c"
-  integrity sha512-HUG6KJbbyqk5ijsA9jvefEoQhN0RkqhOpkZrEmabPG+6UMWskGRqzoRgot1/DWt14LVLP3MHiKmS/VVZH/NyDg==
+"@secretlint/secretlint-rule-no-dotenv@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@secretlint/secretlint-rule-no-dotenv/-/secretlint-rule-no-dotenv-2.0.0.tgz#8fa67665fa4cb9dc165374331ad9ed440978eb4b"
+  integrity sha512-6r+oK8DoB23KASW6jrcAAlSv3XKjOTeh2XtNRSVfY6zyHTzJAG9PUP6Of1Za5gpr1tmVozdukSxPiRliUbe+og==
   dependencies:
-    "@secretlint/types" "^1.1.0"
+    "@secretlint/types" "^2.0.0"
 
 "@secretlint/secretlint-rule-npm@^1.1.0":
   version "1.1.0"
@@ -208,6 +208,11 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@secretlint/types/-/types-1.1.0.tgz#dafb350d711b24e0b19443b63d4fb1f816a5e7bc"
   integrity sha512-gegj3bQ6Mrn71cwz13Ui5Vi4b/mgUjki/DpuQ6tJz6zBoWUD96TNGOd3sxaruxZ/JB6foL8uT92bAb4rqLsZXA==
+
+"@secretlint/types@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@secretlint/types/-/types-2.0.0.tgz#ffc670c4ddb6c548b38a5a3f369a933f94cfd4c3"
+  integrity sha512-iKBe0ui9/99Oqsd/MF1gu+R9vCz4SN2gk+uzXjiVo3ywV1OyVrp+64Y4iiSoCDJtwg3mY0F5wNqJlHmCrCSMSQ==
 
 "@textlint/ast-node-types@^4.2.5":
   version "4.2.5"
