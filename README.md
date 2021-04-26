@@ -6,7 +6,7 @@
 
 - Global Git Hooks collection
     - Using [`core.hooksPath`](https://git-scm.com/docs/githooks) on Git 2.9+
-- If project has setup local git hook, call local hooks too
+- If project has set up local git hook, call local hooks too
     - Order: local hooks -> global hooks 
 - Define ignoring project by `IGNORE_GLOBAL_HOOKS` file
 
@@ -38,9 +38,33 @@ yarn install
 git config --global core.hooksPath $(pwd)/hooks
 ```
 
+## Zsh Integration
+
+Some project use `core.hooksPath`.
+
+
+Git prefer to use local `core.hooksPath` than global `core.hooksPath`.
+
+So, I've overridden the local `core.hooksPath` with global hooks paths.
+
+```
+# Override <project>/.githook → <global>/git-hooks/hooks/
+function preexec_git_global_hooks() {
+  inside_git_repo="$(git rev-parse --is-inside-work-tree 2>/dev/null)"
+  if [ "$inside_git_repo" ]; then
+      githooksDir=$(git rev-parse --show-toplevel)"/.githooks"
+      if [ -d "${githooksDir}" ]; then
+        git config --local core.hooksPath "/path/to/git-hooks/hooks"
+      fi;
+  fi
+}
+autoload -Uz add-zsh-hook
+add-zsh-hook preexec preexec_git_global_hooks
+```
+
 ## Options
 
-You have setup, then bootstrap script create `IGNORE_GLOBAL_HOOKS` file.
+You have set up, then bootstrap script create `IGNORE_GLOBAL_HOOKS` file.
 It is collection of absolute path to ignore global hooks.
 
 `IGNORE_GLOBAL_HOOKS`:
