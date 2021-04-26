@@ -84,10 +84,6 @@ Use [`--no-verify`](https://git-scm.com/docs/git-commit#Documentation/git-commit
 git commit --no-verify
 ```
 
-## Changelog
-
-See [Releases page](https://github.com/azu/git-hooks/releases).
-
 ## Contributing
 
 Pull requests and stars are always welcome.
