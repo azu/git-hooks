@@ -40,8 +40,7 @@ git config --global core.hooksPath $(pwd)/hooks
 
 ## Zsh Integration
 
-Some project use `core.hooksPath`.
-
+Some project have defined `core.hooksPath` in git config.
 
 Git prefer to use local `core.hooksPath` than global `core.hooksPath`.
 
