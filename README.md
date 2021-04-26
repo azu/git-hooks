@@ -42,6 +42,8 @@ git config --global core.hooksPath $(pwd)/hooks
 
 Some project have defined `core.hooksPath` in git config.
 
+- Example: [Git Hooks without extra dependencies like Husky in Node.js project - DEV Community 👩‍💻👨‍💻](https://dev.to/azu/git-hooks-without-extra-dependencies-like-husky-in-node-js-project-jjp)
+
 Git prefer to use local `core.hooksPath` than global `core.hooksPath`.
 
 So, I've overridden the local `core.hooksPath` with global hooks paths.
