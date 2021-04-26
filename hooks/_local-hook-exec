@@ -11,7 +11,7 @@ if [ -e "$LOCAL_HOOK" ]; then
     export LOCAL_HOOK_IS_CALLED=1
 fi
 if [ -e "$LOCAL_HOOK_ALT" ]; then
-    $LOCAL_HOOK
+    $LOCAL_HOOK_ALT
     export LOCAL_HOOK_IS_CALLED=1
 fi
 
