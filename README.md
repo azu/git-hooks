@@ -76,7 +76,7 @@ If the project path is included in `IGNORE_GLOBAL_HOOKS`, global git hook does n
 
 ## FAQ
 
-### Ignore `pre-commit` hook when commit example
+### Want to ignore `pre-commit` hook
 
 Use [`--no-verify`](https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---no-verify) options.
 
