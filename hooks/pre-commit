@@ -6,7 +6,11 @@ declare parentDir="$(dirname "${scriptDir}")"
 declare FILES=$(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g' | sed 's|\[|\\\\[|g' | sed 's|\]|\\\\]|g')
 [ -z "$FILES" ] && exit 0
 echo "  ▶ Check credentials by secretlint"
-echo "$FILES" | xargs "${parentDir}/node_modules/.bin/secretlint" --secretlintrc "${parentDir}/.secretlintrc.json"
+if [ -f "$PWD/.secretlintignore" ]; then
+    echo "$FILES" | xargs "${parentDir}/node_modules/.bin/secretlint" --secretlintignore "$PWD/.secretlintignore" --secretlintrc "${parentDir}/.secretlintrc.json"
+else
+    echo "$FILES" | xargs "${parentDir}/node_modules/.bin/secretlint" --secretlintrc "${parentDir}/.secretlintrc.json"
+fi
 RET=$?
 if [ $RET -eq 0 ] ;then
     exit 0
