@@ -169,12 +169,12 @@
   dependencies:
     "@secretlint/types" "^3.3.0"
 
-"@secretlint/secretlint-rule-no-homedir@^3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@secretlint/secretlint-rule-no-homedir/-/secretlint-rule-no-homedir-3.3.0.tgz#ce1d92a32af553b11d14204d2d00a3594bbeb1ad"
-  integrity sha512-eBVlcq+RQ4AyZGJTh2PMS99BArZLk07AYNX/ejRROEUhqG9mJL+7+NEkkvNB4ymtbbqPSIbhfJftk85NhRCNxg==
+"@secretlint/secretlint-rule-no-homedir@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@secretlint/secretlint-rule-no-homedir/-/secretlint-rule-no-homedir-4.0.0.tgz#489bc2868e3b0c16347cf3acce009305ec4f155d"
+  integrity sha512-0PHB+chUGa5OLs1p3AyRkyGXnhRiuSp6gNVafsJ9rWrz3QilNNbH0xznRB3x+zoDF2E6OLx3XH8vhD0eM79fsA==
   dependencies:
-    "@secretlint/types" "^3.3.0"
+    "@secretlint/types" "^4.0.0"
     escape-string-regexp "^4.0.0"
 
 "@secretlint/secretlint-rule-npm@^3.3.0":
@@ -234,6 +234,11 @@
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/@secretlint/types/-/types-3.3.0.tgz#a90f84b0158f2e47e53f77696485c5bb4d5fb5e6"
   integrity sha512-D9HEUy5l45b8mgyUc842BmEX/bKXjYnWSFk0up0s9fUfDlZga0LI4uFCzj5wvf9Ir9In2VBbd2kRmzu0+yiLAA==
+
+"@secretlint/types@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@secretlint/types/-/types-4.0.0.tgz#5c4607881ce46deb281865f5b36811afcb48972b"
+  integrity sha512-aLpt9od2w8qRmqsyJ+8/0Tp9HaTyCppAY3aeb9AOg3v9ZZaCuCeRhpm55Oq46diepsex1Rhs5Gkvg/gw+QIkvQ==
 
 "@textlint/ast-node-types@^4.4.3":
   version "4.4.3"
