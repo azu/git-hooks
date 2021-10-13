@@ -26,7 +26,7 @@
   "dependencies": {
     "@secretlint/secretlint-rule-no-dotenv": "^4.0.0",
     "@secretlint/secretlint-rule-no-homedir": "^4.0.0",
-    "@secretlint/secretlint-rule-preset-recommend": "^4.1.0",
-    "secretlint": "^4.1.0"
+    "@secretlint/secretlint-rule-preset-recommend": "^4.1.3",
+    "secretlint": "^4.1.3"
   }
 }
