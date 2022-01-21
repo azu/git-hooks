@@ -18,3 +18,7 @@ fi
 if cat "${IGNORE_GLOBAL_HOOKS}" | grep -q "${GIT_ROOT}"; then
     exit 0
 fi
+# NO_VERIFY_GLOBAL_HOOKS=1 git commit -m "commit_message"
+if [ -n "${NO_VERIFY_GLOBAL_HOOKS}" ]; then
+  exit 0
+fi
