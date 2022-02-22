@@ -4,7 +4,7 @@ source $(dirname "${0}")/_local-hook-exec
 declare scriptDir=$(cd $(dirname $0) || exit;pwd)
 declare parentDir="$(dirname "${scriptDir}")"
 declare HAS_NOT_NODE=$(type node >/dev/null 2>&1)
-if ! HAS_NOT_NODE ;then
+if ! $HAS_NOT_NODE ;then
   exit 0
 fi
 declare FILES=$(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g' | sed 's|\[|\\\\[|g' | sed 's|\]|\\\\]|g')
