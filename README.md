@@ -19,8 +19,9 @@
 
 **Requirement:**
 
-- Node.js 12+
+- Node.js 16+
 - Git 2.9+
+- 1Password CLI
 
 Check if you already have any global git hooks:
 
@@ -37,6 +38,10 @@ yarn install
 # setup git config
 git config --global core.hooksPath $(pwd)/hooks
 ```
+
+## Load env using 1Password CLI
+
+    op inject --in-file .env.local.template --out-file .env
 
 ## Zsh Integration
 
