@@ -3,8 +3,9 @@
 source $(dirname "${0}")/_local-hook-exec
 declare scriptDir=$(cd $(dirname $0) || exit;pwd)
 declare parentDir="$(dirname "${scriptDir}")"
-declare HAS_NOT_NODE=$(type node >/dev/null 2>&1)
-if ! $HAS_NOT_NODE ;then
+declare HAS_NOT_NODE;
+HAS_NOT_NODE=$(command -v node || echo "not found")
+if [[ "${HAS_NOT_NODE}" == "not found" ]]; then
   exit 0
 fi
 # Secretlint
