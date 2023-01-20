@@ -1,5 +1,4 @@
 #!/bin/bash
-
 source $(dirname "${0}")/_local-hook-exec
 declare scriptDir=$(cd $(dirname $0) || exit;pwd)
 declare parentDir="$(dirname "${scriptDir}")"

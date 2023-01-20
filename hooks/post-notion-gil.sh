@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# GIL Script
 # Post commit log to Notin
 
 GIT_COMMIT_HASH="$1"
