@@ -10,7 +10,10 @@ declare GIT_REPO_HTTP_URL
 GIT_COMMIT_LOG=$(git log -n 1 HEAD --format="format:%h %s")
 GIT_COMMIT_HASH=$(echo "${GIT_COMMIT_LOG}" | cut -d' ' -f1)
 GIT_COMMIT_MSG=$(echo "${GIT_COMMIT_LOG}" | cut -d' ' -f2-)
-GIT_REPO_HTTP_URL=$( (git config --get remote.origin.url || echo "https://") | sed -e 's/.git$//'  -e 's/^ssh:\/\/git@/https:\/\//' -e 's/^git@github.com:/https:\/\/github.com\//' )
+
+currentDirName=$(basename $(pwd))
+parentDirName=$(basename $(dirname $(pwd)))
+GIT_REPO_HTTP_URL=$( (git config --get remote.origin.url || echo "https://github.com/${parentDirName}/${currentDirName}") | sed -e 's/.git$//'  -e 's/^ssh:\/\/git@/https:\/\//' -e 's/^git@github.com:/https:\/\/github.com\//' )
 
 # call as subprocess
 bash "$(dirname ${0})/post-notion-gil.sh" "${GIT_COMMIT_HASH}" "${GIT_COMMIT_MSG}" "${GIT_REPO_HTTP_URL}" > /dev/null & exit 0;
