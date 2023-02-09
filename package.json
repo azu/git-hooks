@@ -24,9 +24,9 @@
     "prepare": "node scripts/bootstrap.js"
   },
   "dependencies": {
-    "@secretlint/secretlint-rule-no-dotenv": "^6.0.2",
-    "@secretlint/secretlint-rule-no-homedir": "^6.0.2",
-    "@secretlint/secretlint-rule-preset-recommend": "^6.0.2",
-    "secretlint": "^6.0.2"
+    "@secretlint/secretlint-rule-no-dotenv": "^6.1.0",
+    "@secretlint/secretlint-rule-no-homedir": "^6.1.0",
+    "@secretlint/secretlint-rule-preset-recommend": "^6.1.0",
+    "secretlint": "^6.1.0"
   }
 }
