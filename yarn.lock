@@ -160,14 +160,14 @@
     "@secretlint/types" "^6.2.0"
     "@textlint/regexp-string-matcher" "^2.0.2"
 
-"@secretlint/secretlint-rule-no-dotenv@^6.1.0":
+"@secretlint/secretlint-rule-no-dotenv@^6.2.0":
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/@secretlint/secretlint-rule-no-dotenv/-/secretlint-rule-no-dotenv-6.2.0.tgz#4afa8b19a3c68016ec2962779a873ccf051e5d00"
   integrity sha512-RgR5vvNQmQ2EBis4KNewd42SFn7VCkDjI3Qnz4udgklenBjnS0cG86YH5dem31F4Lt4zMcEoY/CplzX5PgsJdw==
   dependencies:
     "@secretlint/types" "^6.2.0"
 
-"@secretlint/secretlint-rule-no-homedir@^6.1.0":
+"@secretlint/secretlint-rule-no-homedir@^6.2.0":
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/@secretlint/secretlint-rule-no-homedir/-/secretlint-rule-no-homedir-6.2.0.tgz#c088b608997df6af2a04b42944ceb5e0e5ed7507"
   integrity sha512-xmEux1yXBerq5FXyJUcaSrWHCymwnAyagtzBUX5sCjOvkcx3v4Dny2PQIIjVGEentyP0U06wy6Gqc/72KgZjPQ==
@@ -183,7 +183,7 @@
     "@secretlint/types" "^6.2.0"
     "@textlint/regexp-string-matcher" "^2.0.2"
 
-"@secretlint/secretlint-rule-preset-recommend@^6.1.0":
+"@secretlint/secretlint-rule-preset-recommend@^6.2.0":
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/@secretlint/secretlint-rule-preset-recommend/-/secretlint-rule-preset-recommend-6.2.0.tgz#1b68ecaefe34dbe99e577e8719f192b40dd6cdfd"
   integrity sha512-MxO8dJavRSsoKqzXsZ5YOhiGIGHM1hbGd8oAs00fMx2Rg7DRhVU2BiTx7ypzGC4Nr4LChZVET8QLeBeJNpy0Zg==
@@ -1015,7 +1015,7 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
-secretlint@^6.1.0:
+secretlint@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/secretlint/-/secretlint-6.2.0.tgz#7ae487817ab09de10befe800552c2238f00952d7"
   integrity sha512-WVihp7RhOWPjCSOTlVsHxCmYUGLiyd//KxJIYUEALWUwF2kIYUUrtMKbZJoUW7eWbS4PKpkJ2olaIVLlUAcVjQ==
