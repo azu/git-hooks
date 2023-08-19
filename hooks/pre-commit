@@ -17,9 +17,9 @@ FILES=$(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g' | sed
 [ -z "$FILES" ] && exit 0
 echo "  ▶ Check credentials by secretlint"
 if [ -f "$PWD/.secretlintignore" ]; then
-    echo "$FILES" | xargs /opt/homebrew/bin/fnm exec --using=18 node "${parentDir}/node_modules/.bin/secretlint" --secretlintignore "$PWD/.secretlintignore" --secretlintrc "${parentDir}/.secretlintrc.json"
+    echo "$FILES" | xargs fnm exec --using=18 node "${parentDir}/node_modules/.bin/secretlint" --secretlintignore "$PWD/.secretlintignore" --secretlintrc "${parentDir}/.secretlintrc.json"
 else
-    echo "$FILES" | xargs /opt/homebrew/bin/fnm exec --using=18 node "${parentDir}/node_modules/.bin/secretlint" --secretlintrc "${parentDir}/.secretlintrc.json"
+    echo "$FILES" | xargs fnm exec --using=18 node "${parentDir}/node_modules/.bin/secretlint" --secretlintrc "${parentDir}/.secretlintrc.json"
 fi
 RET=$?
 if [ $RET -eq 0 ] ;then
