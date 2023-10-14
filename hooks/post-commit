@@ -21,4 +21,19 @@ parentDirName=$(basename $(dirname $(pwd)))
 GIT_REPO_HTTP_URL=$( (git config --get remote.origin.url || echo "https://github.com/${parentDirName}/${currentDirName}") | sed -e 's/.git$//'  -e 's/^ssh:\/\/git@/https:\/\//' -e 's/^git@github.com:/https:\/\/github.com\//' )
 
 # call as subprocess
-bash "$(dirname ${0})/post-notion-gil.sh" "${GIT_COMMIT_HASH}" "${GIT_COMMIT_MSG}" "${GIT_REPO_HTTP_URL}" > /dev/null & exit 0;
+bash "$(dirname ${0})/post-notion-gil.sh" "${GIT_COMMIT_HASH}" "${GIT_COMMIT_MSG}" "${GIT_REPO_HTTP_URL}" > /dev/null &
+
+# 📝 [Note] Mode -- if commit message starts with "📝" or includes "[Note]"
+IS_NOTE_MODE=$(git log -1 --pretty=%B | grep -E '^(📝|\[Note\])')
+if [[ -n "${IS_NOTE_MODE}" ]]; then
+  # メモの作業内容を戻すコミットをする
+  headSHA=$(git rev-parse HEAD)
+  git revert --no-commit HEAD
+  git ls-tree -r --name-only HEAD | xargs git commit -m "↩️ ${headSHA}" --
+  # メモを書く直前の状態に作業内容を戻す
+  git show "$(git rev-parse HEAD)" | git apply -R
+  # terminal notification
+  # remove 📝 and [Note]
+  trimCommitMesasge=$(echo "${GIT_COMMIT_MSG}" | sed -e 's/📝//' -e 's/\[Note\]//')
+  osascript -e "display notification \"${trimCommitMesasge}\" with title \"📝 メモを記録\""
+fi
