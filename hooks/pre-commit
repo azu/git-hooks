@@ -13,7 +13,7 @@ if [[ "${HAS_NOT_NODE}" == "not found" ]]; then
 fi
 # Secretlint
 declare FILES
-FILES=$(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g' | sed 's|\[|\\\\[|g' | sed 's|\]|\\\\]|g')
+FILES=$(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g' | sed 's|\[|\\[|g' | sed 's|\]|\\]|g')
 [ -z "$FILES" ] && exit 0
 echo "  ▶ Check credentials by secretlint"
 if [ -f "$PWD/.secretlintignore" ]; then
