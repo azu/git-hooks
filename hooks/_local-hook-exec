@@ -8,10 +8,18 @@ declare IGNORE_GLOBAL_HOOKS="$(dirname "${scriptDir}")/IGNORE_GLOBAL_HOOKS"
 # Prefer project's hook than global hooks
 if [ -e "$LOCAL_HOOK" ]; then
     $LOCAL_HOOK
+    # if local hook exit with non-zero, exit with non-zero
+    if [ $? -ne 0 ]; then
+        exit 1
+    fi
     export LOCAL_HOOK_IS_CALLED=1
 fi
 if [ -e "$LOCAL_HOOK_ALT" ]; then
     $LOCAL_HOOK_ALT
+    # if local hook exit with non-zero, exit with non-zero
+    if [ $? -ne 0 ]; then
+        exit 1
+    fi
     export LOCAL_HOOK_IS_CALLED=1
 fi
 
