@@ -24,10 +24,11 @@
     "prepare": "node scripts/bootstrap.js"
   },
   "dependencies": {
-    "@secretlint/secretlint-rule-no-dotenv": "^8.2.4",
-    "@secretlint/secretlint-rule-no-homedir": "^8.2.4",
-    "@secretlint/secretlint-rule-preset-canary": "^8.2.4",
-    "secretlint": "^8.2.4"
+    "@secretlint/secretlint-rule-no-dotenv": "^8.4.0",
+    "@secretlint/secretlint-rule-no-homedir": "^8.4.0",
+    "@secretlint/secretlint-rule-preset-canary": "^8.4.0",
+    "secretlint": "^8.4.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "packageManager": "yarn@1.22.22+sha256.c17d3797fb9a9115bf375e31bfd30058cac6bc9c3b8807a3d8cb2094794b51ca"
 }
