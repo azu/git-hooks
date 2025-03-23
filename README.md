@@ -19,7 +19,7 @@
 
 **Requirement:**
 
-- Node.js 16+
+- Node.js 22+
 - Git 2.9+
 - 1Password CLI
 
@@ -83,7 +83,7 @@ If the project path is included in `IGNORE_GLOBAL_HOOKS`, global git hook does n
 
 ## FAQ
 
-### Want to ignore `pre-commit` hook
+### How to ignore `pre-commit` hook
 
 Use [`--no-verify`](https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---no-verify) options.
 
