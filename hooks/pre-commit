@@ -3,6 +3,50 @@ source $(dirname "${0}")/_local-hook-exec
 declare scriptDir=$(cd $(dirname $0) || exit;pwd)
 declare parentDir="$(dirname "${scriptDir}")"
 declare HAS_NOT_NODE;
+
+# Pinact check for GitHub Actions workflows
+declare HAS_PINACT
+HAS_PINACT=$(command -v pinact || echo "not found")
+if [[ "${HAS_PINACT}" != "not found" ]]; then
+  # Check if this is one of the managed orgs/users
+  declare REMOTE_URL
+  REMOTE_URL=$(git config --get remote.origin.url)
+  
+  # Extract org/user from git remote URL
+  declare ORG_USER
+  if [[ $REMOTE_URL =~ github\.com[:/]([^/]+)/ ]]; then
+    ORG_USER="${BASH_REMATCH[1]}"
+  fi
+  
+  # List of managed orgs/users
+  declare MANAGED_ORGS=("azu" "efcl" "jser" "almin" "textlint" "textlint-ja" "textlint-rule" "JXA-userland" "js-primer" "ecmascript-daily" "asciidwango" "secretlint" "honkit")
+  
+  # Check if current org/user is in managed list
+  declare IS_MANAGED=false
+  for managed_org in "${MANAGED_ORGS[@]}"; do
+    if [[ "$ORG_USER" == "$managed_org" ]]; then
+      IS_MANAGED=true
+      break
+    fi
+  done
+  
+  if [[ "$IS_MANAGED" == "true" ]]; then
+    # Check if .github/workflows files are changed
+    declare WORKFLOW_FILES
+    WORKFLOW_FILES=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.github/workflows/.*\.ya?ml$')
+    
+    if [[ -n "$WORKFLOW_FILES" ]]; then
+      echo "  ▶ Check GitHub Actions by pinact"
+      pinact runX
+      PINACT_RET=$?
+      if [ $PINACT_RET -ne 0 ]; then
+        echo "  ✗ pinact check failed"
+        exit 1
+      fi
+    fi
+  fi
+fi
+
 # if "NO_SECRET" is defined, skip secretlint
 if [[ -n "${NO_SECRET}" ]]; then
   exit 0
