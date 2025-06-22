@@ -37,7 +37,7 @@ if [[ "${HAS_PINACT}" != "not found" ]]; then
     
     if [[ -n "$WORKFLOW_FILES" ]]; then
       echo "  ▶ Check GitHub Actions by pinact"
-      pinact runX
+      pinact run
       PINACT_RET=$?
       if [ $PINACT_RET -ne 0 ]; then
         echo "  ✗ pinact check failed"
