@@ -60,8 +60,31 @@ declare FILES
 FILES=$(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g' | sed 's|\[|\\[|g' | sed 's|\]|\\]|g')
 [ -z "$FILES" ] && exit 0
 echo "  ▶ Check credentials by secretlint"
+# Get git root directory to handle git worktree scenarios
+declare GIT_ROOT
+GIT_ROOT=$(git rev-parse --show-toplevel)
+
+# For git worktree, also check the main repository root
+declare MAIN_ROOT=""
+declare GIT_COMMON_DIR
+GIT_COMMON_DIR=$(git rev-parse --git-common-dir)
+if [ "$GIT_COMMON_DIR" != ".git" ]; then
+    # This is likely a git worktree
+    MAIN_ROOT=$(dirname "$GIT_COMMON_DIR")
+fi
+
+# Check for .secretlintignore in multiple locations
+declare SECRETLINT_IGNORE_FILE=""
 if [ -f "$PWD/.secretlintignore" ]; then
-    echo "$FILES" | xargs fnm exec --using=18 node "${parentDir}/node_modules/.bin/secretlint" --secretlintignore "$PWD/.secretlintignore" --secretlintrc "${parentDir}/.secretlintrc.json"
+    SECRETLINT_IGNORE_FILE="$PWD/.secretlintignore"
+elif [ -f "$GIT_ROOT/.secretlintignore" ]; then
+    SECRETLINT_IGNORE_FILE="$GIT_ROOT/.secretlintignore"
+elif [ -n "$MAIN_ROOT" ] && [ -f "$MAIN_ROOT/.secretlintignore" ]; then
+    SECRETLINT_IGNORE_FILE="$MAIN_ROOT/.secretlintignore"
+fi
+
+if [ -n "$SECRETLINT_IGNORE_FILE" ]; then
+    echo "$FILES" | xargs fnm exec --using=18 node "${parentDir}/node_modules/.bin/secretlint" --secretlintignore "$SECRETLINT_IGNORE_FILE" --secretlintrc "${parentDir}/.secretlintrc.json"
 else
     echo "$FILES" | xargs fnm exec --using=18 node "${parentDir}/node_modules/.bin/secretlint" --secretlintrc "${parentDir}/.secretlintrc.json"
 fi
