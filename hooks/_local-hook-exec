@@ -5,6 +5,7 @@ declare LOCAL_HOOK="${GIT_ROOT}/.git/hooks/${HOOK_NAME}"
 declare LOCAL_HOOK_ALT="${GIT_ROOT}/.githooks/${HOOK_NAME}"
 declare scriptDir=$(cd $(dirname $0);pwd)
 declare IGNORE_GLOBAL_HOOKS="$(dirname "${scriptDir}")/IGNORE_GLOBAL_HOOKS"
+
 # Prefer project's hook than global hooks
 if [ -e "$LOCAL_HOOK" ]; then
     $LOCAL_HOOK
